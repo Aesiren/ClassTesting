@@ -7,9 +7,9 @@
  *
  */
 
-import { BaseCard } from "./CardClass.js";
-import { RandomCard, AddToPage } from "index.js";
-jest.mock(`./CardClass`);
+import { BaseCard, ForestCard, StoneCard, GrassCard } from "./CardClass.js";
+import { RandomCard, AddToPage } from "./index.js";
+//jest.mock(`./CardClass`);
 
 //Card testing
 
@@ -18,17 +18,19 @@ it('verify creation of BaseCard', () => {
   expect(testCard).toBeInstanceOf(BaseCard);
 })
 
-// test('verify creation of BaseCard', () => {
-//   let testCard = new ForestCard;
-//   expect(testCard).toBeInstanceOf(BaseCard);
-// })
 
-// test('verify creation of BaseCard', () => {
-//   let testCard = new StoneCard;
-//   expect(testCard).toBeInstanceOf(BaseCard);
-// })
 
-// test('verify creation of BaseCard', () => {
-//   let testCard = new GrassCard;
-//   expect(testCard).toBeInstanceOf(BaseCard);
-// })
+it('verify creation of ForrestCard', () => {
+  let testCard = new ForestCard;
+  expect(testCard).toBeInstanceOf(BaseCard);
+})
+
+it('verify creation of StoneCard', () => {
+  let testCard = new StoneCard;
+  expect(testCard).toBeInstanceOf(BaseCard);
+})
+
+it('verify creation of GrassCard', () => {
+  let testCard = new GrassCard;
+  expect(testCard).toBeInstanceOf(BaseCard);
+})

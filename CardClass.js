@@ -9,22 +9,22 @@ export default class BaseCard {
   }
 }
 
-// class GrassCard extends BaseCard {
-//   constructor() {
+class GrassCard extends BaseCard {
+  constructor() {
+    super();
+  }
+}
 
-//   }
-// }
+class ForestCard extends BaseCard {
+  constructor() {
+    super();
+  }
+}
 
-// class ForestCard extends BaseCard {
-//   constructor() {
+class StoneCard extends BaseCard {
+  constructor() {
+    super();
+  }
+}
 
-//   }
-// }
-
-// class StoneCard extends BaseCard {
-//   constructor() {
-
-//   }
-// }
-
-method.exports = { BaseCard, GrassCard, ForestCard, StoneCard };
+module.exports = { BaseCard, GrassCard, ForestCard, StoneCard };
