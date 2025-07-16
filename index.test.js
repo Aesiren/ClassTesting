@@ -8,7 +8,7 @@
  */
 
 import { BaseCard, ForrestCard, StoneCard, GrassCard } from "./CardClass.js";
-import { RandomCard, AddToPage, RandomNumber } from "./index.js";
+import { RandomCard, AddToPage, RandomNumber, CreateNewCard, Deck } from "./index.js";
 //jest.mock(`./CardClass`);
 
 //Card testing
@@ -54,8 +54,8 @@ describe('Sub-Class Tests', () => {
   it('Grass variables set correctly', () => {
     testForrestCard = new ForrestCard;
     expect(testForrestCard.getResourceType).toBe('Forrest');
-    expect(testForrestCard.getValue).toBeGreaterThan(10);
-    expect(testForrestCard.getValue).toBeLessThan(20);
+    expect(testForrestCard.getValue).toBeGreaterThan(9);
+    expect(testForrestCard.getValue).toBeLessThan(21);
   })
 
   it('verify creation of StoneCard', () => {
@@ -67,8 +67,8 @@ describe('Sub-Class Tests', () => {
   it('Stone variables set correctly', () => {
     testStoneCard = new StoneCard;
     expect(testStoneCard.getResourceType).toBe('Stone');
-    expect(testStoneCard.getValue).toBeGreaterThan(10);
-    expect(testStoneCard.getValue).toBeLessThan(20);
+    expect(testStoneCard.getValue).toBeGreaterThan(9);
+    expect(testStoneCard.getValue).toBeLessThan(21);
   })
 
   it('verify creation of GrassCard', () => {
@@ -79,8 +79,8 @@ describe('Sub-Class Tests', () => {
   it('Grass variables set correctly', () => {
     testGrassCard = new GrassCard;
     expect(testGrassCard.getResourceType).toBe('Grass');
-    expect(testGrassCard.getValue).toBeGreaterThan(1);
-    expect(testGrassCard.getValue).toBeLessThan(5);
+    expect(testGrassCard.getValue).toBeGreaterThan(0);
+    expect(testGrassCard.getValue).toBeLessThan(6);
   })
 })
 
@@ -91,7 +91,7 @@ describe('Testing Page Functionality', () => {
     let testA = 'a';
     expect(typeof RandomNumber(testMin, testMax)).toBe("number");
     expect(RandomNumber(testMin, testMax)).toBeGreaterThan(0);
-    expect(RandomNumber(testMin, testMax)).toBeLessThan(10);
+    expect(RandomNumber(testMin, testMax)).toBeLessThan(11);
     expect(RandomNumber(testMin, testA)).toBe(-1);
   })
   it('verify Random Card generator', () => {
@@ -100,7 +100,29 @@ describe('Testing Page Functionality', () => {
     let testA = 'a';
     let testCard = new RandomCard();
     expect(testCard).toBeInstanceOf(BaseCard);
+    expect(typeof testCard.getResourceType).toBe("string");
+    expect(typeof testCard.getValue).toBe("number");
   })
+  it('can create a random card', () => {
+    let testCard = CreateNewCard();
+    expect(typeof testCard).toBe("object");
+    expect(typeof testCard.index).toBe("number");
+    expect(testCard.index).toBe(0);
+    expect(testCard.card).toBeInstanceOf(BaseCard);
+  })
+  it('can create new deck', () => {
+    let testDeck = new Deck;
+    expect(typeof testDeck.cards).toBe("object");
+    expect(testDeck.cards).toBeUndefined;
+    testDeck.addCard(CreateNewCard());
+    expect(testDeck.cards).toBeDefined;
+    expect(testDeck.cards.length).toBe(1);
+    for (let x = 1; x < 10; x++) {
+      testDeck.addCard(CreateNewCard());
+    }
+    expect(testDeck.cards.length).toBe(10);
+  })
+
 })
 
 

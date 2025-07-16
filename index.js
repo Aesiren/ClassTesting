@@ -5,16 +5,52 @@
  *
  *
  */
+import { ForrestCard, StoneCard, GrassCard } from "./CardClass.js";
+
+
+class Deck {
+  constructor() {
+    this.cards = [];
+  }
+
+  addCard(obj) {
+    this.cards.push(obj);
+  }
+}
+
+var indexTracker = 0;
+var activeDeck = new Deck;
 
 function RandomCard() {
   let cardNum = RandomNumber(1, 3);
-  switch cardNum{
+  switch (cardNum) {
     case 1:
-      return GrassCard;
-
-    case
+      return new GrassCard;
+      break;
+    case 2:
+      return new StoneCard;
+      break;
+    case 3:
+      return new ForrestCard;
+      break;
   }
+
 }
+
+function CreateNewCard() {
+  let obj = {
+    index: indexTracker,
+    card: RandomCard(),
+  }
+
+  indexTracker += 1;
+
+  activeDeck.addCard(obj);
+
+  return obj;
+
+}
+
 
 function AddToPage() {
 
@@ -28,4 +64,6 @@ function RandomNumber(min, max) {
   else return -1;
 }
 
-module.exports = { RandomCard, AddToPage, RandomNumber };
+
+
+module.exports = { RandomCard, AddToPage, RandomNumber, CreateNewCard, Deck };
