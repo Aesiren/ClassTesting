@@ -1,0 +1,25 @@
+{
+  "name": "classtesting",
+  "version": "1.0.0",
+  "description": "Practicing Classes and Test Cases",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aesiren/ClassTesting.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Aesiren/ClassTesting/issues"
+  },
+  "homepage": "https://github.com/Aesiren/ClassTesting#readme",
+  "devDependencies": {
+    "@babel/core": "^7.28.0",
+    "@babel/preset-env": "^7.28.0",
+    "babel-jest": "^30.0.4",
+    "jest": "^30.0.4"
+  }
+}

@@ -1,0 +1,34 @@
+/**TODO
+ * Testing for base class
+ * Testing for sub-classes
+ * Testing for Randmization function
+ * Testing for add-to-page function
+ *
+ *
+ */
+
+import { BaseCard } from "./CardClass.js";
+import { RandomCard, AddToPage } from "index.js";
+jest.mock(`./CardClass`);
+
+//Card testing
+
+it('verify creation of BaseCard', () => {
+  const testCard = new BaseCard();
+  expect(testCard).toBeInstanceOf(BaseCard);
+})
+
+// test('verify creation of BaseCard', () => {
+//   let testCard = new ForestCard;
+//   expect(testCard).toBeInstanceOf(BaseCard);
+// })
+
+// test('verify creation of BaseCard', () => {
+//   let testCard = new StoneCard;
+//   expect(testCard).toBeInstanceOf(BaseCard);
+// })
+
+// test('verify creation of BaseCard', () => {
+//   let testCard = new GrassCard;
+//   expect(testCard).toBeInstanceOf(BaseCard);
+// })
