@@ -5,7 +5,7 @@
  *
  *
  */
-import { ForrestCard, StoneCard, GrassCard } from "./CardClass.js";
+import { BaseCard, GrassCard, ForrestCard, StoneCard } from "./CardClass.js";
 
 
 class Deck {
@@ -20,6 +20,18 @@ class Deck {
 
 var indexTracker = 0;
 var activeDeck = new Deck;
+
+NewGame();
+console.log(activeDeck);
+// window.onload = function () {
+//   NewGame();
+//   console.log("Page Loaded");
+// }
+
+function NewGame() {
+  CreateDeck();
+}
+
 
 function RandomCard() {
   let cardNum = RandomNumber(1, 3);
@@ -51,6 +63,12 @@ function CreateNewCard() {
 
 }
 
+function CreateDeck() {
+  for (let x = 0; x < 9; x++) {
+    activeDeck.addCard(CreateNewCard());
+  }
+
+}
 
 function AddToPage() {
 
@@ -66,4 +84,5 @@ function RandomNumber(min, max) {
 
 
 
-module.exports = { RandomCard, AddToPage, RandomNumber, CreateNewCard, Deck };
+//module.exports = { RandomCard, AddToPage, RandomNumber, CreateNewCard, Deck };
+export { RandomCard, AddToPage, RandomNumber, CreateNewCard, Deck }

@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Practicing Classes and Test Cases",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "jest"
   },

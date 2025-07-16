@@ -1,0 +1,19 @@
+.board {
+  display: grid;
+  grid-template-columns: 200px 200px 200px;
+  grid-template-rows: 200px 200px 200px;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.cardholder {
+  align-content: center;
+  text-align: center;
+  border: 5px;
+  border-style: solid;
+  border-color: black;
+  height: 200px;
+  width: 200px;
+
+}

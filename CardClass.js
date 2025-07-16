@@ -6,7 +6,7 @@
 //Base card needs to setup configuration for all cards
 //Contains initial definitions for basic values
 //Cards should contain a randomizer to determine starting resource values
-export default class BaseCard {
+class BaseCard {
   #resourceValue;
   #resourceType;
   constructor() {
@@ -77,4 +77,5 @@ class StoneCard extends BaseCard {
   }
 }
 
-module.exports = { BaseCard, GrassCard, ForrestCard, StoneCard };
+//module.exports = { BaseCard, GrassCard, ForrestCard, StoneCard };
+export { BaseCard, GrassCard, ForrestCard, StoneCard };
