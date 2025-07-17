@@ -1,3 +1,4 @@
+import { BaseCard, GrassCard, ForrestCard, StoneCard } from "./CardClass.js";
 /**TODO:
  * Create randomization function
  * -sub-task: modify for an algorithm
@@ -5,8 +6,13 @@
  *
  *
  */
-import { BaseCard, GrassCard, ForrestCard, StoneCard } from "./CardClass.js";
 
+
+window.onload = function () {
+  NewGame();
+  console.log("Page Loaded");
+
+};
 
 class Deck {
   constructor() {
@@ -21,15 +27,15 @@ class Deck {
 var indexTracker = 0;
 var activeDeck = new Deck;
 
-NewGame();
-console.log(activeDeck);
-// window.onload = function () {
-//   NewGame();
-//   console.log("Page Loaded");
-// }
+// NewGame();
+// console.log(activeDeck);
+
+
 
 function NewGame() {
   CreateDeck();
+  AddToPage();
+  console.log(activeDeck);
 }
 
 
@@ -57,20 +63,27 @@ function CreateNewCard() {
 
   indexTracker += 1;
 
-  activeDeck.addCard(obj);
+  //activeDeck.addCard(obj);
 
   return obj;
 
 }
 
 function CreateDeck() {
-  for (let x = 0; x < 9; x++) {
+  for (let x = 0; x < 17; x++) {
     activeDeck.addCard(CreateNewCard());
   }
 
 }
 
 function AddToPage() {
+  console.log("starting add-to-page", activeDeck.cards[0].card);
+  //let pageElements = document.getElementsByClassName("cardholder");
+  for (let x = 0; x < activeDeck.cards.length; x++) {
+    document.getElementById(x).innerHTML = activeDeck.cards[x].card.picLink;
+    console.log(activeDeck.cards[x].setResourceType)
+  }
+
 
 }
 

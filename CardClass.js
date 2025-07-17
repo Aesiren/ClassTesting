@@ -54,6 +54,7 @@ class GrassCard extends BaseCard {
     super();
     this.setResourceType = "Grass";
     this.setValue = BaseCard.InitialResourceValue(1, 5);
+    this.picLink = "<img src='./pics/grass.jpg' height='200px' width='200px'>"
   }
 }
 
@@ -64,6 +65,7 @@ class ForrestCard extends BaseCard {
     super();
     this.setResourceType = 'Forrest';
     this.setValue = BaseCard.InitialResourceValue(10, 20);
+    this.picLink = "<img src='./pics/trees.jpg' height='200px' width='200px'>"
   }
 }
 
@@ -74,6 +76,7 @@ class StoneCard extends BaseCard {
     super();
     this.setResourceType = "Stone";
     this.setValue = BaseCard.InitialResourceValue(10, 20);
+    this.picLink = "<img src='./pics/stone.jpg' height='200px' width='200px'>"
   }
 }
 
